@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Hazard Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🚧 Road Hazard Tracker</h1>
+        <p class="subtitle">Report road hazards in your community</p>
 
+        <!-- Report Form -->
+        <div class="form-section">
+            <h2>Report a Hazard</h2>
+            <form id="hazardForm">
+                <div class="form-group">
+                    <label for="hazardType">Type of Hazard:</label>
+                    <select id="hazardType" required>
+                        <option value="">-- Select Type --</option>
+                        <option value="pothole">Pothole</option>
+                        <option value="fallen-sign">Fallen Sign</option>
+                        <option value="debris">Debris on Road</option>
+                        <option value="damaged-guardrail">Damaged Guardrail</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" placeholder="e.g., Main St & 5th Ave" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="severity">Severity:</label>
+                    <select id="severity" required>
+                        <option value="">-- Select Severity --</option>
+                        <option value="low">Low - Minor issue</option>
+                        <option value="medium">Medium - Noticeable hazard</option>
+                        <option value="high">High - Dangerous</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" rows="3" placeholder="Additional details..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Upload Photo:</label>
+                    <input type="file" id="image" accept="image/*" required>
+                    <small>Max 5MB. JPG, PNG, or GIF</small>
+                </div>
+
+                <button type="submit" class="btn-submit">Submit Report</button>
+            </form>
+            <div id="statusMessage"></div>
+        </div>
+
+        <!-- View Reports -->
+        <div class="reports-section">
+            <h2>Recent Reports</h2>
+            <button id="loadReports" class="btn-load">Load All Reports</button>
+            <div id="reportsList"></div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
